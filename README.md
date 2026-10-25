@@ -1,9 +1,6 @@
 # qa-autopilot
 
-You can check out other repos: https://github.com/maureenobiekwe/qa-automation-framework
-
-https://github.com/maureenobiekwe/qa-playbook
-
+**Related repositories:** [qa-automation-framework](https://github.com/maureenobiekwe/qa-automation-framework) (UI, API, accessibility, performance and CI tests) · [qa-playbook](https://github.com/maureenobiekwe/qa-playbook) (method, templates and checklists for spec review and test planning)
 
 Goal in, tested and reported out. Describe a user journey in plain language and the pipeline plans it, drives a real browser to find the elements, writes a readable Playwright test with self-healing locators, runs it, learns from failures, optionally audits the site passively for security gaps, and writes the report.
 
