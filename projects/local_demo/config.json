@@ -1,0 +1,9 @@
+{
+  "base_url": "http://127.0.0.1:8765/login.html",
+  "goal": "Log in, add the first item to the cart, open the cart, verify \"Canvas Backpack\" is in the cart",
+  "credentials": {
+    "username": "demo_user",
+    "password": "demo_pass"
+  },
+  "_note": "Runs against demo_app/ served locally: python -m http.server 8765 --directory demo_app"
+}

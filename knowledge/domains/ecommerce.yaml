@@ -1,0 +1,8 @@
+keywords: [cart, checkout, product, shop, order, price, sort, shipping, catalog, store, item]
+default_assertions: ["the cart shows the item that was added"]
+rules:
+  - Cart totals must equal the sum of line items plus tax and shipping, to the cent.
+  - Sorting and filtering must change the visible order or count, not just the control state.
+  - Removing an item must update the cart badge and the total in the same view.
+  - Checkout must block empty required fields and show which field failed.
+  - Prices shown on listing, cart and checkout must match.

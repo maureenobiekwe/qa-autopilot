@@ -1,0 +1,9 @@
+keywords: [login, log in, sign in, signup, sign up, register, password, reset, otp, logout, session, oauth, two-factor, 2fa]
+default_assertions: ["the user lands on a signed-in page"]
+rules:
+  - Wrong password and unknown email must show the same message, so accounts cannot be enumerated.
+  - Protected pages must redirect to login when signed out, and logout must really end the session (back button, refresh).
+  - Password reset links must be single use and expire.
+  - OTP entry must lock or throttle after repeated wrong codes.
+  - Tokens must not be stored where JavaScript can read them if the spec says httpOnly cookies.
+  - Error messages must not reveal whether an account exists.

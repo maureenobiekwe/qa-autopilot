@@ -1,0 +1,6 @@
+keywords: [airtime, data bundle, bill, recharge, sim, isp, plan upgrade, ticket, telecom, subscription line]
+default_assertions: ["a payment or request reference is shown"]
+rules:
+  - A paid top-up or bundle must show in the balance, and a failed payment must not credit it.
+  - Plan upgrades must prorate or state the new price before confirming.
+  - Support tickets must keep their reference number and status after refresh.

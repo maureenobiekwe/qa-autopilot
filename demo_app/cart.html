@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Demo Shop - Cart</title>
+</head>
+<body>
+  <h1>Your cart</h1>
+  <ul id="items"></ul>
+  <a href="shop.html">Continue shopping</a>
+  <script>
+    var cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
+    var ul = document.getElementById('items');
+    cart.forEach(function (n) { var li = document.createElement('li'); li.textContent = n; ul.appendChild(li); });
+  </script>
+</body>
+</html>

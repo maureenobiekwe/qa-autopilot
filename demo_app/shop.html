@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Demo Shop - Products</title>
+</head>
+<body>
+  <h1>Products</h1>
+  <a id="cart-link" href="cart.html">Cart <span id="cart-badge">0</span></a>
+  <ul>
+    <li>Canvas Backpack <button data-test="add-backpack" onclick="add('Canvas Backpack')">Add to cart</button></li>
+    <li>Desk Lamp <button data-test="add-lamp" onclick="add('Desk Lamp')">Add to cart</button></li>
+  </ul>
+  <script>
+    var cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
+    function render() { document.getElementById('cart-badge').textContent = cart.length; }
+    function add(name) { cart.push(name); sessionStorage.setItem('cart', JSON.stringify(cart)); render(); }
+    render();
+  </script>
+</body>
+</html>

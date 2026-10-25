@@ -1,0 +1,32 @@
+{
+  "goal": "Log in, add the first item to the cart, open the cart, verify \"Canvas Backpack\" is in the cart",
+  "base_url": "http://127.0.0.1:8765/login.html",
+  "domain": "auth",
+  "planner": "heuristic",
+  "steps": [
+    {
+      "kind": "login",
+      "intent": "log in",
+      "expect": "",
+      "n": 1
+    },
+    {
+      "kind": "action",
+      "intent": "add the first item to the cart",
+      "expect": "",
+      "n": 2
+    },
+    {
+      "kind": "action",
+      "intent": "open the cart",
+      "expect": "",
+      "n": 3
+    },
+    {
+      "kind": "verify",
+      "intent": "verify \"Canvas Backpack\" is in the cart",
+      "expect": "",
+      "n": 4
+    }
+  ]
+}

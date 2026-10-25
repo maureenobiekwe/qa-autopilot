@@ -1,0 +1,8 @@
+keywords: [dashboard, workspace, team, role, permission, subscription, billing, plan, invite, settings, project, admin]
+default_assertions: ["the new record appears in the list"]
+rules:
+  - Every role must be tested for what it can see and what it can change; a lower role must never reach admin actions by URL.
+  - Create, edit and delete must each be checked in the list view, not just the toast.
+  - Plan limits (seats, projects, usage) must be enforced at the limit and one past it.
+  - Billing changes must show the right plan and amount in the next invoice or summary.
+  - Deleting a parent record must not leave orphans or leak data to other workspaces.

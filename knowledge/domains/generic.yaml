@@ -1,0 +1,5 @@
+keywords: []
+default_assertions: ["the page shows the expected result"]
+rules:
+  - Check the visible outcome, not only that a click happened.
+  - Test the unhappy path of every form: empty, too long, wrong format.

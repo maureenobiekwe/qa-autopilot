@@ -1,0 +1,9 @@
+keywords: [bank, banking, transfer, deposit, withdraw, account, balance, kyc, wallet, payment, loan, ledger]
+default_assertions: ["a confirmation message is shown after the transaction"]
+rules:
+  - Money movement must be verified on both sides: sender balance down, receiver balance up, by the same amount.
+  - A failed or rejected transfer must leave balances unchanged.
+  - Repeating the same submit (double click, refresh) must not create a second transaction.
+  - Amounts at the boundary (0, negative, more than balance, more than daily limit) must be rejected with a clear message.
+  - Session expiry during a transaction must not leave it half completed.
+  - KYC fields that hold identity data must not appear in URLs or console logs.

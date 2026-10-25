@@ -1,0 +1,47 @@
+name: Product regression (Playwright + Newman)
+
+# Runs the starter suite in automation/ against a staging environment.
+# Secrets live on the GitHub Environment named "staging":
+#   Settings > Environments > New environment "staging" > Add environment secret
+# Add BASE_URL, API_BASE_URL, QA_EMAIL, QA_PASSWORD there, never in files.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * *" # nightly, 6am Lagos
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    environment: staging
+    defaults:
+      run:
+        working-directory: automation
+    env:
+      BASE_URL: ${{ secrets.BASE_URL }}
+      API_BASE_URL: ${{ secrets.API_BASE_URL }}
+      QA_EMAIL: ${{ secrets.QA_EMAIL }}
+      QA_PASSWORD: ${{ secrets.QA_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false # keep the git token out of .git/config (zizmor: artipacked)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npx playwright install --with-deps chromium
+      - name: UI and auth tests
+        run: npx playwright test --project=chrome-desktop
+      - name: API regression (Newman)
+        if: hashFiles('automation/api/collection.json') != ''
+        run: npx newman run api/collection.json -e api/staging.env.json -r cli,junit --reporter-junit-export ../evidence/newman.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qa-reports
+          path: |
+            automation/playwright-report/
+            evidence/

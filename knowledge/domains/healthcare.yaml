@@ -1,0 +1,7 @@
+keywords: [patient, appointment, doctor, clinic, prescription, medical, hipaa, health, record]
+default_assertions: ["the appointment or record is confirmed on screen"]
+rules:
+  - Patient data must appear only to the patient and authorised staff; test another user's record by ID.
+  - Sensitive fields must not appear in URLs, page titles or console output.
+  - Booking must reject double booking of the same slot.
+  - Every view or change of a record should leave an audit entry.

@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+node_modules/
+playwright-report/
+test-results/
+# per-run output stays local; keep the example reports committed under docs/
+projects/*/outputs/
+projects/*/screenshots/
+projects/*/tests/
+projects/*/.checkpoint.json
+projects/*/workflow.json
+projects/*/execution.json
+projects/*/sitemap.json
+projects/*/qa_session_logs.json

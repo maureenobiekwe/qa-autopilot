@@ -1,0 +1,9 @@
+{
+  "base_url": "https://www.saucedemo.com/",
+  "goal": "Log in, add the first item to the cart, open the cart, verify the item is in the cart",
+  "credentials": {
+    "username": "standard_user",
+    "password": "secret_sauce"
+  },
+  "_note": "Public demo credentials published by the SauceDemo site. Never commit real ones; use QA_USERNAME and QA_PASSWORD env vars."
+}
