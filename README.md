@@ -1,5 +1,10 @@
 # qa-autopilot
 
+You can check out other repos: https://github.com/maureenobiekwe/qa-automation-framework
+
+https://github.com/maureenobiekwe/qa-playbook
+
+
 Goal in, tested and reported out. Describe a user journey in plain language and the pipeline plans it, drives a real browser to find the elements, writes a readable Playwright test with self-healing locators, runs it, learns from failures, optionally audits the site passively for security gaps, and writes the report.
 
 Built by a Senior QA Engineer, so the defaults come from how QA actually works: no guessed passes, evidence for every failure, and a failed run that tells you *why* it failed.
